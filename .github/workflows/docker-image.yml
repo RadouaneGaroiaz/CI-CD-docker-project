@@ -42,4 +42,4 @@ jobs:
           context: .
           platforms: linux/arm/v7
           push: true
-          tags: dudu49/CICD-API:latest
+          tags: dudu49/cicd-api:latest
