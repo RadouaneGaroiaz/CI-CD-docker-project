@@ -1,0 +1,1 @@
+[![Docker Image CI](https://github.com/RadouaneGaroiaz/CI-CD-docker-project/actions/workflows/docker-image.yml/badge.svg)](https://github.com/RadouaneGaroiaz/CI-CD-docker-project/actions/workflows/docker-image.yml)
