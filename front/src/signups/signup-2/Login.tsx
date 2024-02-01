@@ -29,42 +29,6 @@ const Login: FC = () => {
     }
   };
 
-/*   useEffect(() => {
-    setIsEmailValid(!emails.some((e) => e === debouncedEmail));
-    setIsLoading(false);
-  }, [debouncedEmail]); */
-
-/*   useEffect(() => {
-    const checkEmailExists = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3001/api/users/${debouncedEmail}`);
-
-        // Assuming the server responds with a 200 status code if the email exists
-        setIsEmailValid(response.status === 200);
-      } catch (error : any) {
-        console.error('Error occurred while checking email existence', error);
-
-        // Assuming the server responds with a 400 status code if the email does not exist
-        if (error.response && error.response.status === 400) {
-          setIsEmailValid(false);
-        } else {
-          // Handle other errors
-          setIsEmailValid(true);
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    if (debouncedEmail) {
-      setIsLoading(true);
-      checkEmailExists();
-    } else {
-      setIsEmailValid(false);
-      setIsLoading(false);
-    }
-  }, [debouncedEmail]); */
-
   const submitForm = async () => {
     try {
       setIsLoading(true);

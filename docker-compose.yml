@@ -26,5 +26,16 @@ services:
     depends_on:
       - mongo_db  
 
+  nginx:
+    image: nginx
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env  
+    ports:
+      - 9999:9999
+     
+
 volumes:
   mongo_db: {}
