@@ -68,7 +68,7 @@ const Login: FC = () => {
   const submitForm = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.post('http://localhost:3001/products',{
+      const response = await axios.post('http://localhost:3000/products',{
         name: form.name,
         price: form.price,
       }

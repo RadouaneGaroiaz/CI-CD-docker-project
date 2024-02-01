@@ -1,11 +1,21 @@
 const express = require('express');
 const createError = require('http-errors');
 const dotenv = require('dotenv').config();
+//allow any cors
+
+const cors = require('cors');
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200
+};
+
+
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors(corsOptions));
 
 // Initialize DB
 require('./initDB')();
