@@ -26,6 +26,16 @@ services:
     depends_on:
       - mongo_db  
 
+  front:
+    container_name: front_container
+    build: ./front
+    ports:
+      - 3001:3001
+    environment:
+      PORT: 3001
+    depends_on:
+      - api    
+
   nginx:
     image: nginx
     restart: always
