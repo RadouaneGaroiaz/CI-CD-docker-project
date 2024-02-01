@@ -28,7 +28,7 @@ services:
 
   front:
     container_name: front_container
-    build: ./front
+    build: ./frontend
     ports:
       - 3001:3001
     environment:
