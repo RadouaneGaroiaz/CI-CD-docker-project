@@ -1,12 +1,10 @@
-import { ChangeEvent, FC, useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { useState } from "react";
+
 import axios from "axios"; 
-import "./styles.css";
-import logo from "./logo.png";
+import "./style.css";
 
 
-
-const Login: FC = () => {
+const Home = () => {
   const [form, setForm] = useState({
     name: "",
     price: 0,
@@ -15,7 +13,7 @@ const Login: FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prevForm) => ({
       ...prevForm,
@@ -32,24 +30,21 @@ const Login: FC = () => {
   const submitForm = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.post('http://localhost:3000/products',{
+      const response = await axios.post('http://localhost:3000/products', {
         name: form.name,
         price: form.price,
-      }
-      );
- 
+      });
 
       if (response.status === 200) {
         console.log('Form data sent successfully');
-        alert('Product added successfuly');
-
+        alert('Product added successfully');
       } else if (response.status === 400) {
         console.log('Form data validation failed');
-        alert('invalid product');
+        alert('Invalid product');
       }
     } catch (error) {
       console.error('Error occurred while sending form data', error);
-      alert('invalid product 22222');
+      alert('Invalid product 22222');
     } finally {
       setIsLoading(false);
     }
@@ -57,10 +52,10 @@ const Login: FC = () => {
 
   return (
     <div className="card">
-      <img src={logo} alt="Logo" />
+  {/*     <img src={logo} alt="Logo" /> */}
       <h2>Add product</h2>
       <form className="form">
-          <input
+        <input
           name="name"
           onChange={handleChange}
           spellCheck="false"
@@ -70,8 +65,8 @@ const Login: FC = () => {
           value={form.name}
         />
         <div className={`spinner ${isLoading ? "loading" : ""}`}></div>
-       
-            <input
+
+        <input
           name="price"
           onChange={handleChange}
           spellCheck="false"
@@ -89,10 +84,9 @@ const Login: FC = () => {
         >
           Add product
         </button>
-    
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Home;
