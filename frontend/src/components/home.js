@@ -30,7 +30,7 @@ const Home = () => {
   const submitForm = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.post('http://localhost:3000/products', {
+      const response = await axios.post('https://backend-cicd.azurewebsites.net/products', {
         name: form.name,
         price: form.price,
       });
@@ -44,7 +44,7 @@ const Home = () => {
       }
     } catch (error) {
       console.error('Error occurred while sending form data', error);
-      alert('Invalid product 22222');
+      alert('Error occurred while sending form data');
     } finally {
       setIsLoading(false);
     }
