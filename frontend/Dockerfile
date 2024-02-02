@@ -2,8 +2,8 @@
 FROM node:alpine as build
 WORKDIR /app
 COPY . .
-RUN yarn
-RUN yarn build
+RUN npm install --silent
+RUN npm run build
 
 # production environment
 FROM nginx:stable-alpine
