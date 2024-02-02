@@ -2,8 +2,9 @@
 FROM node:18.12.0-alpine as build
 WORKDIR /app
 COPY . .
-RUN npm install
+RUN NODE_ENV=production npm i
 RUN npm run build
+
 
 # production environment
 FROM nginx:stable-alpine
