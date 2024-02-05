@@ -6,8 +6,8 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name": "zzzzzeeeb",
-  "price": 22
+  "name": "Lenovo",
+  "price": 220
 }
 
 ### GET a product by id
